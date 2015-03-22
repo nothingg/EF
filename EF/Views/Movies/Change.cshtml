@@ -1,0 +1,30 @@
+﻿@model EF.Models.Movie
+
+@{
+    ViewBag.Title = "Change";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Change</h2>
+
+<fieldset>
+    <legend>Movie</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MovieName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MovieName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Author)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.MovieID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

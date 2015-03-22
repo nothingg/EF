@@ -1,0 +1,24 @@
+﻿@model IEnumerable<EF.Models.Movie>
+
+@{
+    ViewBag.Title = "Lists";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lists</h2>
+
+<table>
+    <tr>
+        <th></th>
+        <th>@Html.DisplayNameFor(model => model.MovieName)</th>
+        <th>@Html.DisplayNameFor(model => model.Author)</th>
+    </tr>
+    @foreach(var item in Model)
+    {
+        <tr>
+            <td>@Html.ActionLink("Edit", "Change", new { id = item.MovieID })</td>
+            <td>@item.MovieName</td>
+            <td>@item.MovieID</td>
+        </tr>
+    }
+</table>
